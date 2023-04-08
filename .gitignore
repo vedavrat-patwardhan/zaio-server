@@ -37,7 +37,7 @@ bower_components
 Thumbs.db
 
 # Ignore js files  Change dist to src after cloning the repo
-# build
+build
 
 # ignore yarn.lock
 yarn.lock
