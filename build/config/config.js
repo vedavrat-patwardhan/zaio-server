@@ -3,9 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const dotenv_1 = (0, tslib_1.__importDefault)(require("dotenv"));
 const joi_1 = (0, tslib_1.__importDefault)(require("joi"));
-dotenv_1.default.config({
-    path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
-});
+dotenv_1.default.config();
 const envVarsSchema = joi_1.default.object()
     .keys({
     NODE_ENV: joi_1.default.string()

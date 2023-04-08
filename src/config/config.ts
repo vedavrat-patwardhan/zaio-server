@@ -1,10 +1,10 @@
 import dotenv from 'dotenv';
 import Joi from 'joi';
 
-dotenv.config({
-  path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
-});
-
+// dotenv.config({
+//   path: process.env.NODE_ENV === 'production' ? '.env.production' : '.env',
+// });
+dotenv.config();
 const envVarsSchema = Joi.object()
   .keys({
     NODE_ENV: Joi.string()
