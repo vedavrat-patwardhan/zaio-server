@@ -4,13 +4,14 @@ export const isWeekend = (date: string): boolean => {
 };
 
 export const updateToNextMonday = (date: string): Date => {
-  const dayOfWeek = new Date(date).getUTCDay();
+  const dayOfWeek = new Date(date).getDay();
+  const newDate = new Date(date);
   if (dayOfWeek === 6) {
     // If Saturday
-    new Date(date).setUTCDate(new Date(date).getUTCDate() + 2); // Add 2 days to go to Monday
+    newDate.setDate(newDate.getDate() + 2); // Add 2 days to go to Monday
   } else if (dayOfWeek === 0) {
     // If Sunday
-    new Date(date).setUTCDate(new Date(date).getUTCDate() + 1); // Add 1 day to go to Monday
+    newDate.setDate(newDate.getDate() + 1); // Add 1 day to go to Monday
   }
-  return new Date(date);
+  return newDate;
 };

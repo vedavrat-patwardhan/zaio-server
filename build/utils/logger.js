@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
-const config_1 = (0, tslib_1.__importDefault)(require("../config/config"));
-const winston_1 = (0, tslib_1.__importDefault)(require("winston"));
+const config_1 = tslib_1.__importDefault(require("../config/config"));
+const winston_1 = tslib_1.__importDefault(require("winston"));
 const enumerateErrorFormat = winston_1.default.format((info) => {
     if (info instanceof Error) {
         Object.assign(info, { message: info.stack });

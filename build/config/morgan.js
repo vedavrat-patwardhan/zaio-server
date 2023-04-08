@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.errorHandler = exports.successHandler = void 0;
 const tslib_1 = require("tslib");
-const logger_1 = (0, tslib_1.__importDefault)(require("../utils/logger"));
-const morgan_1 = (0, tslib_1.__importDefault)(require("morgan"));
-const config_1 = (0, tslib_1.__importDefault)(require("./config"));
+const logger_1 = tslib_1.__importDefault(require("../utils/logger"));
+const morgan_1 = tslib_1.__importDefault(require("morgan"));
+const config_1 = tslib_1.__importDefault(require("./config"));
 morgan_1.default.token('message', (req, res) => res.locals.errorMessage || '');
 const getIpFormat = () => config_1.default.env === 'production' ? ':remote-addr - ' : '';
 const successResponseFormat = `${getIpFormat()}:method :url :status - :response-time ms`;

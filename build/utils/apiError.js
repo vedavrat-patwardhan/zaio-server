@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AccessTokenError = exports.NoDataError = exports.TokenExpiredError = exports.BadTokenError = exports.NoEntryError = exports.ForbiddenError = exports.NotFoundError = exports.BadRequestError = exports.InternalError = exports.AuthFailureError = exports.ApiError = void 0;
 const tslib_1 = require("tslib");
-const config_1 = (0, tslib_1.__importDefault)(require("../config/config"));
+const config_1 = tslib_1.__importDefault(require("../config/config"));
 const apiResponse_1 = require("./apiResponse");
 var ErrorType;
 (function (ErrorType) {

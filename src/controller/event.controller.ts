@@ -6,12 +6,10 @@ import catchAsync from '@src/utils/catchAsync';
 
 export const createEvent = catchAsync(async (req, res, _next) => {
   let { date } = req.body;
-  console.log('date', date);
   if (isWeekend(date)) {
     date = updateToNextMonday(date);
   }
-
-  const id = (await EventModel.countDocuments()) + 1;
+  const id = (await EventModel.countDocuments().exec()) + 1;
 
   // Create new admin document
   const event = new EventModel({

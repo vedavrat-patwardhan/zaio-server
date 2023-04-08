@@ -7,14 +7,15 @@ const isWeekend = (date) => {
 };
 exports.isWeekend = isWeekend;
 const updateToNextMonday = (date) => {
-    const dayOfWeek = new Date(date).getUTCDay();
+    const dayOfWeek = new Date(date).getDay();
+    const newDate = new Date(date);
     if (dayOfWeek === 6) {
-        new Date(date).setUTCDate(new Date(date).getUTCDate() + 2);
+        newDate.setDate(newDate.getDate() + 2);
     }
     else if (dayOfWeek === 0) {
-        new Date(date).setUTCDate(new Date(date).getUTCDate() + 1);
+        newDate.setDate(newDate.getDate() + 1);
     }
-    return new Date(date);
+    return newDate;
 };
 exports.updateToNextMonday = updateToNextMonday;
 //# sourceMappingURL=event.service.js.map
